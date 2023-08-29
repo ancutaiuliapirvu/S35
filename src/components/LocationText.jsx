@@ -1,7 +1,11 @@
-function LocationText() {
+function LocationText(props) {
+    console.log('props', props);
+    
+    const {locationSelected} = props;
+
     return (
         <p>
-            Orasul curent este <strong>Bucuresti</strong>
+            Orasul curent este <strong>{locationSelected}</strong>
         </p>
     )
 }

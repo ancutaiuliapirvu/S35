@@ -1,6 +1,9 @@
 import Dropdown from 'react-bootstrap/Dropdown'
 
-function LocationDropdown() {
+function LocationDropdown(props) {
+
+    console.log('props dropdown', props)
+    const {setLocationSelected} = props;
     return(
         <>
             <Dropdown>
@@ -9,11 +12,18 @@ function LocationDropdown() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => {
-                        console.log('Bucuresti')
-                    }}>Bucuresti</Dropdown.Item>
-                    <Dropdown.Item>Cluj</Dropdown.Item>
-                    <Dropdown.Item>Brasov</Dropdown.Item>
+                    <Dropdown.Item 
+                        onClick={() => setLocationSelected('Bucuresti') }>
+                        Bucuresti</Dropdown.Item>
+                    <Dropdown.Item
+                        onClick={() => setLocationSelected('Cluj')}
+                    >Cluj</Dropdown.Item>
+                    <Dropdown.Item
+                        onClick={() => setLocationSelected('Brasov')}
+                    >Brasov</Dropdown.Item>
+                    <Dropdown.Item
+                        onClick={() => setLocationSelected('Timisoara')}
+                    >Timisoara</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>           
         </>
